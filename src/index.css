@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #09090B;
+  color: #F4F4F5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphic Bento Cards */
+.bento-card {
+  background: rgba(18, 18, 21, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card-interactive:hover {
+  border-color: rgba(250, 204, 21, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(250, 204, 21, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* AI Markdown Body in Panels */
+.markdown-content {
+  color: #D4D4D8;
+  line-height: 1.65;
+  font-size: 0.875rem;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  color: #FACC15;
+  font-weight: 800;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-left: 3px solid #FACC15;
+  padding-left: 0.5rem;
+}
+
+.markdown-content p {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-content table {
+  width: 100%;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.markdown-content th {
+  background-color: rgba(24, 24, 27, 0.9);
+  color: #FACC15;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  font-weight: 700;
+}
+
+.markdown-content td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(10, 10, 12, 0.5);
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #FACC15;
+  background: rgba(250, 204, 21, 0.06);
+  padding: 0.5rem 0.85rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 0.75rem 0;
+  color: #E4E4E7;
+}
+
+.markdown-content code {
+  background: #18181B;
+  color: #FACC15;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.825em;
+  border: 1px solid rgba(250, 204, 21, 0.15);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .bento-card {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #CCCCCC !important;
+    box-shadow: none !important;
+  }
+}
